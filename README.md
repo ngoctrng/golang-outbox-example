@@ -61,7 +61,7 @@ make build
 make infras
 ```
 
-2. Run the app, worker and relay
+2. Run the app, worker and relay. Open new terminal tab:
 
 ```shell
 make dev
@@ -73,7 +73,7 @@ make dev
 make clean
 ```
 
-4. Send request
+4. Send request. Open new terminal tab:
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{"email":"test@example.com","name":"TESTTTTTT"}' http://localhost:3000/customers
