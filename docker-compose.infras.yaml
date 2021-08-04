@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql:5.7.25
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_DATABASE: "outbox-demo"
+      MYSQL_USER: "outbox"
+      MYSQL_PASSWORD: "123456"
+    ports:
+      - "33063:3306"
+
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_PASS: "123456"
+      RABBITMQ_DEFAULT_USER: "outbox"
+    ports:
+      - "56720:5672"
+      - "8081:15672"
+
+networks:
+  default:
